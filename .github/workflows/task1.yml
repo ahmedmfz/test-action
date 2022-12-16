@@ -37,5 +37,5 @@ jobs:
       - name: Compiled css files
         run: |
           npm install
-          npm run prod
+          npm run build
           echo install npm done.
