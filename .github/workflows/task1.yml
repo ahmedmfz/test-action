@@ -43,4 +43,4 @@ jobs:
       - name: create deployment artifact
         env:
           GITHUB_SHA : ${{ github.sha }}
-         echo ${github.sha} 
+         echo ${GITHUB_SHA} 
