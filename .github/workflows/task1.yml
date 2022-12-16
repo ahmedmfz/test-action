@@ -44,3 +44,11 @@ jobs:
         env:
           GITHUB_SHA : ${{ github.sha }}
         run : tar -czf "${GITHUB_SHA}".tar.gz  --exclude=*.git  --exclude=node_modules *
+
+      # Runs a set of commands using the runners shell
+      - name: store artifact for distribution
+        uses: actions/upload-artifact@v2
+        with:
+          name: app-build
+          path: ${{ github.sha }}.tar.gz
+
