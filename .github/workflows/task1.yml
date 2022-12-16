@@ -43,4 +43,4 @@ jobs:
       - name: create deployment artifact
         env:
           GITHUB_SHA : ${{ github.sha }}
-          echo ${GITHUB_SHA} 
+        run : tar -czf "${GITHUB_SHA}".tar.gz  --exclude=*.git  --exclude=node_modules *
