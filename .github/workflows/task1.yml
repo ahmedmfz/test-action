@@ -40,6 +40,18 @@ jobs:
           echo install npm done.
 
       # Runs a set of commands using the runners shell
+      - name: install envoy
+        run: |
+          composer global require "laravel/envoy=~1.0"
+          echo install envoy done.
+
+      # Runs a set of commands using the runners shell
+      - name: run envoy
+        run: |
+          ~/.composer/vendor/bin/envoy run deploy
+          echo run envoy done.
+
+      # Runs a set of commands using the runners shell
       - name: create deployment artifact
         env:
           GITHUB_SHA : ${{ github.sha }}
